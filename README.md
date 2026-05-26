@@ -19,7 +19,10 @@ SmartBudget aims to provide users with simple budgeting tools and financial insi
 # Problem 
 
 Managing personal finances can be challenging, especially when spending is spread across multiple categories and recurring expenses.
+## Why This Project?
 
+As users of banking and budgeting apps ourselves, this is a problem we can easily relate to. Most of us may regularly manage income, expenses and savings through digital banking platforms, making it a familiar and meaningful use case. 
+It also gives us the opportunity to recreate features commonly found in modern banking and FinTech applications while applying the skills learned throughout the CFG Degree.
 Without a clear overview of their finances, users may:
 
 - Overspend in certain categories
@@ -598,6 +601,3 @@ All team members will also contribute to:
 ## Collaboration Agreement
 
 Each person should own at least one feature, but team members can pair up if anyone gets stuck. If someone is struggling or unavailable, they should let the group know early so the team can adjust tasks and keep the project on track.
-# Conclusion
-
-SmartBudget aims to provide users with a practical and accessible way to manage their finances while demonstrating key software engineering principles covered throughout the CFG Degree programme, including Python development, Flask web applications, SQL databases, Object-Oriented Programming, algorithms, version control and collaborative software development practices.
