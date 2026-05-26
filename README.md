@@ -1,0 +1,603 @@
+# SmartBudget – Personal Finance Budget Planner
+
+## Project Overview
+
+SmartBudget is a web personal finance application designed to help users better understand and manage their spending habits.
+
+Many people know their account balance but struggle to answer important questions such as:
+
+- How much am I spending each month?
+- Which categories consume most of my income?
+- Am I staying within my budget?
+- Am I saving enough to meet my goals?
+- What changes could improve my financial wellbeing?
+
+SmartBudget aims to provide users with simple budgeting tools and financial insights through an intuitive web application built using Python, Flask, SQL and Object-Oriented Programming principles.
+
+---
+
+# Problem 
+
+Managing personal finances can be challenging, especially when spending is spread across multiple categories and recurring expenses.
+
+Without a clear overview of their finances, users may:
+
+- Overspend in certain categories
+- Fail to meet savings goals
+- Struggle to identify unnecessary expenses
+- Lack visibility into their overall financial health
+
+Our project addresses this problem by providing a centralised platform where users can record transactions, create budgets, track spending, and receive personalised financial feedback.
+
+---
+
+# Project Objectives
+
+The primary objectives of SmartBudget are:
+
+1. Allow users to record and manage financial transactions.
+2. Enable users to create and monitor monthly budgets.
+3. Categorise spending to provide meaningful insights.
+4. Calculate a financial health score based on spending and savings behaviour.
+5. Help users identify areas where they can improve financial management.
+6. Demonstrate software engineering concepts learned throughout the CFG Degree.
+
+---
+
+# Core Features
+
+## Transaction Management
+
+Users can:
+
+- Add transactions
+- Edit transactions
+- Delete transactions
+- View transaction history
+
+---
+
+## Budget Management
+
+Users can:
+
+- Set monthly budgets
+- Define spending limits by category
+- Track remaining available budget
+
+---
+
+## Spending Analysis
+
+The system will:
+
+- Calculate total spending
+- Summarise spending by category
+- Identify highest spending categories
+- Display budget utilisation
+
+---
+
+## Financial Health Score
+
+The application will calculate a simple financial health score using factors such as:
+
+- Savings rate
+- Budget adherence
+- Spending behaviour
+
+The score will be accompanied by recommendations for improvement.
+
+---
+
+## Search and Filtering
+
+Users will be able to:
+
+- Search transactions
+- Filter by category
+- View spending summaries for selected categories
+
+---
+
+# Example of recent transactions
+----------------------------------
+Welcome Sarah
+
+Monthly Budget: £2,000
+Spent: £1,450
+Remaining: £550
+
+[Pie Chart]
+Food 35%
+Bills 30%
+Travel 15%
+Shopping 20%
+
+[Line Chart]
+Monthly spending trend
+
+Recent Transactions
+----------------------------------
+Tesco          £45
+Netflix        £10
+Trainline      £18
+----------------------------------
+
+
+# Technology Stack
+
+| Technology                              | Purpose |
+|-----------------------------------------|---------|
+| Python                                  | Core application logic |
+| Flask                                   | Web application framework |
+| SQL                                     | Data persistence and querying |
+| Extension feature: HTML/Jinja Templates | User interface |
+| GitHub                                  | Version control and collaboration |
+| Jira                                    | Project management and task tracking |
+
+---
+
+# Software Engineering Concepts Demonstrated
+
+| Concept | Implementation |
+|----------|----------------|
+| Object-Oriented Programming | User, Transaction, Budget and FinancialHealth classes |
+| Data Structures | Lists and dictionaries for transaction processing and categorisation |
+| Searching Algorithms | Transaction and category filtering |
+| Sorting Algorithms | Ranking transactions and spending categories |
+| CRUD Operations | Creating, reading, updating and deleting records |
+| Database Design | Relational SQL schema |
+| Version Control | GitHub workflow and pull requests |
+| Agile Working | Jira task management and sprint planning |
+
+---
+
+# Example of Finincial Health recommendations 
+You have spent 92% of your entertainment budget.
+
+Reducing restaurant spending by £40 per month would improve your score.
+
+Your savings rate is below your target.
+
+
+# Success Criteria
+
+The project will be considered successful if:
+
+## Functional Requirements
+
+- Users can create, update and delete transactions.
+- Users can create and manage budgets.
+- Transaction data is stored in a SQL database.
+- Spending totals are calculated correctly.
+- Financial health scores are generated successfully.
+- Search and filtering functionality operates correctly.
+
+## Technical Requirements
+
+- Application is developed using Python and Flask.
+- Data is persisted using SQL.
+- Code follows Object-Oriented Programming principles.
+- GitHub is used for collaboration and version control.
+- Jira is used for project planning and task tracking.
+- Code is organised, readable and documented.
+
+## User Experience Requirements
+
+- Interface is simple and intuitive.
+- Users can navigate key features easily.
+- Transaction data and Calculations are accurate
+- Financial information is presented clearly.
+
+---
+
+# Potential Database Structure
+
+## Users
+
+- user_id
+- name
+- email
+
+## Transactions
+
+- transaction_id
+- user_id
+- amount
+- category
+- description
+- transaction_date
+
+## Budgets
+
+- budget_id
+- user_id
+- category
+- monthly_limit
+
+## Savings Goals
+
+- goal_id
+- user_id
+- target_amount
+- target_date
+
+---
+
+# Future Enhancements (Stretch Goals)
+
+The following features may be implemented if time permits:
+
+## Data Analytics
+
+- Spending trend analysis
+- Monthly spending reports
+- Category-based summaries using Pandas
+
+## Extension Feature if time permits: Data Visualisation?
+
+- Spending charts
+- Budget allocation graphs
+- Savings progress visualisations using Matplotlib
+
+## Automated Categorisation
+
+- Automatic transaction categorisation using predefined rules
+
+## Personalised Recommendations
+
+- More advanced financial recommendations based on spending patterns
+
+## Import Functionality
+
+- Import transaction data from CSV files
+
+## Enhanced Dashboard
+
+- Interactive financial overview page
+- Budget performance indicators
+- Savings goal progress tracking
+
+---
+
+# Possible Task Delegation
+
+To ensure the project is fair and collaborative, every team member will own a coding task and contribute to the GitHub repository. 
+Non-coding tasks such as documentation, Jira updates, testing and presentation preparation will also be shared across the team.
+This allocation is planned so there is no blocked waiting for someone else's logic.
+
+| Team Member | Main Area | Coding Contribution |
+|------------|-----------|---------------------|
+| Person 1 | Transaction Management | Build Flask routes and SQL queries for creating, updating, deleting and viewing transactions, including filtering by category and transaction type |
+| Person 2 | Budget Management | Build Flask routes and database functionality for creating, updating, deleting and retrieving budgets and budget categories |
+| Person 3 | Budget Intelligence & Financial Health | Build Python/OOP logic for remaining budget calculations, overspending detection, budget utilisation, financial health scoring and personalised recommendations |
+| Person 4 | Savings Goals Management | Build Flask routes and SQL functionality for creating, updating, deleting and tracking savings goals and progress towards targets |
+| Person 5 | Reporting & Analytics | Build reporting endpoints, summary calculations, aggregation queries and spending analysis by category, income and expenses |
+| Person 6 | Database Infrastructure, Testing & Integration | Design database schema, relationships and seed data; create unit and integration tests; maintain shared Postman collection and support feature integration |
+
+
+# Proposed Task Allocation in detail
+
+## Team Working Principles
+
+To ensure fair contribution across the team:
+
+- Every team member owns a feature area.
+- Every team member contributes code.
+- Every team member contributes SQL queries.
+- Every team member contributes tests.
+- Every team member makes GitHub commits and pull requests.
+- Documentation, Jira updates and presentation preparation are shared responsibilities.
+- Team members can pair program and support each other when needed.
+
+---
+
+# Team Responsibilities
+
+## Person 1 — Transaction Management
+
+### Responsibilities
+
+- Create transactions
+- Edit transactions
+- Delete transactions
+- View transaction history
+- Filter transactions by category
+- Filter transactions by income/expense
+
+### API Endpoints
+
+```text
+POST /transactions
+GET /transactions
+PUT /transactions/{id}
+DELETE /transactions/{id}
+```
+
+### Technical Skills Demonstrated
+
+- Flask routes
+- CRUD operations
+- SQL queries
+- Validation
+- Error handling
+
+---
+
+## Person 2 — Budget Management
+
+### Responsibilities
+
+- Create budgets
+- Update budget limits
+- Delete budgets
+- Retrieve budgets
+- Manage budget categories
+
+### API Endpoints
+
+```text
+POST /budgets
+GET /budgets
+PUT /budgets/{id}
+DELETE /budgets/{id}
+```
+
+### Technical Skills Demonstrated
+
+- Flask routes
+- CRUD operations
+- SQL queries
+- Validation
+- Database interaction
+
+### Notes
+
+This role is responsible for storing and managing budget data.
+Budget calculations are handled by Person 3.
+
+---
+
+## Person 3 — Budget Intelligence & Financial Health
+
+### Responsibilities
+
+#### Budget Calculations
+
+- Calculate remaining budget
+- Calculate budget utilisation percentage
+- Detect overspending
+- Compare spending against budget limits
+
+#### Financial Health Score
+
+- Calculate savings rate
+- Calculate budget adherence score
+- Generate financial health score
+
+#### Recommendations Engine
+
+- Generate personalised recommendations
+- Generate overspending alerts
+- Generate financial wellbeing insights
+
+### API Endpoints
+
+```text
+GET /budget-summary
+GET /health-score
+GET /recommendations
+```
+
+### Technical Skills Demonstrated
+
+- OOP
+- Algorithms
+- Data structures
+- Business logic
+- Calculations
+- Financial modelling
+
+### Example Outputs
+
+```text
+Remaining Budget: £450
+
+Health Score: 82/100
+
+You have spent 92% of your entertainment budget.
+
+Increasing monthly savings by £50 would improve your financial health score.
+```
+
+---
+
+## Person 4 — Savings Goals Management
+
+### Responsibilities
+
+- Create savings goals
+- Update savings goals
+- Delete savings goals
+- Track progress towards goals
+- Calculate percentage completion
+
+### API Endpoints
+
+```text
+POST /savings-goals
+GET /savings-goals
+PUT /savings-goals/{id}
+DELETE /savings-goals/{id}
+```
+
+### Technical Skills Demonstrated
+
+- CRUD operations
+- Flask routes
+- SQL queries
+- Validation
+- OOP
+
+---
+
+## Person 5 — Reporting & Analytics
+
+### Responsibilities
+
+- Monthly spending summaries
+- Spending by category reports
+- Income vs expense summaries
+- Top spending categories
+- Largest transactions report
+
+### API Endpoints
+
+```text
+GET /reports/monthly
+GET /reports/categories
+GET /reports/income-vs-expenses
+GET /reports/top-expenses
+```
+
+### Technical Skills Demonstrated
+
+- SQL aggregation queries
+- GROUP BY queries
+- JOIN queries
+- Reporting logic
+- Data analysis
+
+### Optional Stretch Goals
+
+- Pandas summaries
+- Matplotlib charts
+- Trend analysis
+
+---
+
+## Person 6 — Database Infrastructure, Testing & Integration
+
+### Database Responsibilities
+
+- Design database schema
+- Define relationships between tables
+- Create seed/sample data
+- Support complex JOIN queries
+- Maintain shared database setup scripts
+
+### Testing Responsibilities
+
+- Unit tests
+- Integration tests
+- API validation tests
+- Shared Postman collection
+
+### Integration Responsibilities
+
+- Verify application works after merges
+- Support integration testing
+- Assist with merge conflict resolution
+- Verify endpoint consistency
+
+### Technical Skills Demonstrated
+
+- SQL database design
+- Relational modelling
+- Testing
+- Validation
+- Git collaboration
+- Integration support
+
+---
+
+# Shared Responsibilities
+
+All team members contribute to:
+
+- GitHub commits
+- Pull requests
+- Code reviews
+- Jira updates
+- Project activity logs
+- README documentation
+- Presentation slides
+- Demo preparation
+
+---
+
+# Git Workflow
+
+## Branches
+
+```text
+main
+dev
+feature/*
+```
+
+### main
+
+Stable version of the application.
+
+### dev
+
+Shared integration branch used to combine completed features before release.
+
+### feature branches
+
+Examples:
+
+```text
+feature-transactions
+feature-budgets
+feature-budget-intelligence
+feature-savings-goals
+feature-reporting
+feature-testing
+```
+
+---
+
+## Merge Process
+
+1. Develop feature on feature branch
+2. Push feature branch to GitHub
+3. Create Pull Request into dev
+4. Resolve conflicts if required
+5. Test integrated functionality in dev
+6. Merge dev into main when stable
+
+---
+
+# Definition of Done
+
+A task is considered complete when:
+
+- Functionality works locally
+- Relevant tests pass
+- Code is committed to GitHub
+- Pull Request has been created
+- Jira ticket has been updated
+- Documentation has been updated where necessary
+
+## Shared Responsibilities
+
+All team members will also contribute to:
+
+- GitHub commits and pull requests
+- Jira task updates
+- debugging their own code
+- Code reviews
+- Project activity log
+- Documentation
+- Presentation preparation
+- Final demo practice
+
+## Collaboration Agreement
+
+Each person should own at least one feature, but team members can pair up if anyone gets stuck. If someone is struggling or unavailable, they should let the group know early so the team can adjust tasks and keep the project on track.
+# Conclusion
+
+SmartBudget aims to provide users with a practical and accessible way to manage their finances while demonstrating key software engineering principles covered throughout the CFG Degree programme, including Python development, Flask web applications, SQL databases, Object-Oriented Programming, algorithms, version control and collaborative software development practices.
