@@ -16,7 +16,7 @@ SmartBudget aims to provide users with simple budgeting tools and financial insi
 
 ---
 
-# Problem 
+# Problem Identification
 
 Managing personal finances can be challenging, especially when spending is spread across multiple categories and recurring expenses.
 ## Why This Project?
@@ -601,3 +601,10 @@ All team members will also contribute to:
 ## Collaboration Agreement
 
 Each person should own at least one feature, but team members can pair up if anyone gets stuck. If someone is struggling or unavailable, they should let the group know early so the team can adjust tasks and keep the project on track.
+
+
+## External API Integration https://frankfurter.dev/
+
+SmartBudget will integrate with a currency exchange rate API to support international spending and travel-related transactions. Users will be able to record purchases made abroad and view their value in their home currency, helping them better understand the true impact of holiday and overseas spending on their budget.
+
+This feature also provides insight into how currency fluctuations can affect spending power, savings goals and financial planning. It reflects functionality commonly found in modern banking and FinTech applications, making the project both practical and relevant to everyday users.
