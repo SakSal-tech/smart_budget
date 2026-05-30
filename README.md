@@ -58,6 +58,19 @@ Users can:
 - Delete transactions
 - View transaction history
 
+Must-have:
+
+Full transaction history
+Filter by income/expense
+Filter by category
+View by month
+
+Nice-to-have:
+
+Weekly summary
+Daily summary
+Monthly spending total
+
 ---
 
 ## Budget Management
@@ -67,6 +80,17 @@ Users can:
 - Set monthly budgets
 - Define spending limits by category
 - Track remaining available budget
+- Create monthly budget
+- Set category limits
+- Calculate remaining budget
+- Detect overspending
+- Calculate budget utilisation %
+
+Financial Health Score
+- Savings rate calculation
+- Budget adherence score
+- Spending behaviour score
+- Overall financial health score
 
 ---
 
@@ -92,6 +116,7 @@ The application will calculate a simple financial health score using factors suc
 The score will be accompanied by recommendations for improvement.
 
 ---
+
 
 ## Search and Filtering
 
@@ -218,6 +243,7 @@ The project will be considered successful if:
 - user_id
 - category
 - monthly_limit
+- amount_spent
 
 ## Savings Goals
 
@@ -225,6 +251,15 @@ The project will be considered successful if:
 - user_id
 - target_amount
 - target_date
+
+Use sample/dummy data from day one.
+
+Even if the database is not finished, people can code using fake lists/dictionaries:
+
+sample_transactions = [
+    {"amount": 50, "category": "Groceries", "type": "expense"},
+    {"amount": 2500, "category": "Salary", "type": "income"}
+]
 
 ---
 
@@ -243,6 +278,20 @@ The following features may be implemented if time permits:
 - Spending charts
 - Budget allocation graphs
 - Savings progress visualisations using Matplotlib
+
+
+
+
+
+## Suspicious Activity Detection Examples:
+  - Transaction amount exceeds the user's normal spending pattern
+  - Multiple transactions occur within a short period
+  - Spending appears in an unusual category
+  - Currency conversion or exchange rate differences create unexpected spending changes
+
+This feature would add a risk-awareness element to the application and make the project more relevant to banking, fraud prevention and financial monitoring use cases. 
+It would be implemented as a rule-based system rather than a machine learning model, keeping it realistic within the project timeframe.
+
 
 ## Automated Categorisation
 
@@ -270,15 +319,24 @@ To ensure the project is fair and collaborative, every team member will own a co
 Non-coding tasks such as documentation, Jira updates, testing and presentation preparation will also be shared across the team.
 This allocation is planned so there is no blocked waiting for someone else's logic.
 
-| Team Member | Main Area | Coding Contribution |
-|------------|-----------|---------------------|
-| Person 1 | Transaction Management | Build Flask routes and SQL queries for creating, updating, deleting and viewing transactions, including filtering by category and transaction type |
-| Person 2 | Budget Management | Build Flask routes and database functionality for creating, updating, deleting and retrieving budgets and budget categories |
-| Person 3 | Budget Intelligence & Financial Health | Build Python/OOP logic for remaining budget calculations, overspending detection, budget utilisation, financial health scoring and personalised recommendations |
-| Person 4 | Savings Goals Management | Build Flask routes and SQL functionality for creating, updating, deleting and tracking savings goals and progress towards targets |
-| Person 5 | Reporting & Analytics | Build reporting endpoints, summary calculations, aggregation queries and spending analysis by category, income and expenses |
-| Person 6 | Database Infrastructure, Testing & Integration | Design database schema, relationships and seed data; create unit and integration tests; maintain shared Postman collection and support feature integration |
+| Team Member | Main Area                                      | Coding Contribution                                                                                                                                                                                                            |
+| ----------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Person 1    | Transaction Management                         | Build Flask routes and SQL queries for creating, updating, deleting and viewing transactions, including filtering by category and transaction type                                                                             |
+| Person 2    | Budget Management                              | Build Flask routes and database functionality for creating, updating, deleting and retrieving budgets and budget categories                                                                                                    |
+| Person 3    | Budget Intelligence & Financial Health         | Build Python/OOP logic for remaining budget calculations, overspending detection, budget utilisation, financial health scoring and personalised recommendations                                                                |
+| Person 4    | Savings Goals Management                       | Build Flask routes and SQL functionality for creating, updating, deleting and tracking savings goals and progress towards targets                                                                                              |
+| Person 5    | Search, Filtering & Transaction Explorer       | Build search, filtering and sorting functionality across transactions, budgets and savings goals. Implement category searches, date-range filtering, transaction lookup, sorting by amount/date and recent activity endpoints. |
+| Person 6    | Database Infrastructure, Testing & Integration | Design database schema, relationships and seed data; create unit and integration tests; maintain shared Postman collection and support feature integration                                                                     |
 
+## Do we need Testing & Quality Lead?
+
+    They own:
+    
+    - unit tests
+    integration tests
+    input validation tests
+    reporting bugs clearly
+    checking features work before merge
 
 # Proposed Task Allocation in detail
 
@@ -445,38 +503,54 @@ DELETE /savings-goals/{id}
 
 ---
 
-## Person 5 — Reporting & Analytics
+## Person 5 — Search, Filtering & Transaction Explorer
 
 ### Responsibilities
 
-- Monthly spending summaries
-- Spending by category reports
-- Income vs expense summaries
-- Top spending categories
-- Largest transactions report
+* Search transactions by category
+* Search transactions by date range
+* Search budgets by category
+* Search savings goals
+* Filter income vs expenses
+* Sort transactions by amount
+* Sort transactions by date
+* View recent transactions
+* View largest transactions
 
 ### API Endpoints
 
 ```text
-GET /reports/monthly
-GET /reports/categories
-GET /reports/income-vs-expenses
-GET /reports/top-expenses
+GET /transactions/search
+GET /transactions/filter
+GET /transactions/sort
+GET /transactions/recent
+GET /transactions/largest
+GET /budgets/search
+GET /savings-goals/search
 ```
 
 ### Technical Skills Demonstrated
 
-- SQL aggregation queries
-- GROUP BY queries
-- JOIN queries
-- Reporting logic
-- Data analysis
+```text
+Flask routes
+Search algorithms
+Sorting algorithms
+SQL queries
+JOIN queries
+Filtering logic
+Data structures
+API endpoint design
+```
 
 ### Optional Stretch Goals
 
-- Pandas summaries
-- Matplotlib charts
-- Trend analysis
+```text
+Advanced multi-criteria filtering
+Search performance optimisation
+Pagination for large transaction histories
+Most-used spending categories
+Recently viewed searches
+```
 
 ---
 
@@ -608,3 +682,15 @@ Each person should own at least one feature, but team members can pair up if any
 SmartBudget will integrate with a currency exchange rate API to support international spending and travel-related transactions. Users will be able to record purchases made abroad and view their value in their home currency, helping them better understand the true impact of holiday and overseas spending on their budget.
 
 This feature also provides insight into how currency fluctuations can affect spending power, savings goals and financial planning. It reflects functionality commonly found in modern banking and FinTech applications, making the project both practical and relevant to everyday users.
+
+
+## Deligation Difficulty & Time Consumption
+
+| Rank | Team Member  | Main Area                                      | Difficulty      | Time Consumption | Why                                                                                                                               |
+| ---- | ------------ | ---------------------------------------------- | --------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 1    | **Person 4** | Savings Goals Management                       | ⭐ Easy          | ⭐⭐ Low–Medium    | Mostly CRUD operations and progress tracking. Straightforward Flask routes and SQL queries.                                       |
+| 2    | **Person 2** | Budget Management                              | ⭐⭐ Easy–Medium  | ⭐⭐ Medium        | CRUD for budgets and categories with some validation and database relationships.                                                  |
+| 3    | **Person 1** | Transaction Management                         | ⭐⭐⭐ Medium      | ⭐⭐⭐ Medium–High  | Core feature of the application. More routes, validation, filtering and transaction handling.                                     |
+| 4    | **Person 5** | Search, Filtering & Transaction Explorer       | ⭐⭐⭐ Medium–High | ⭐⭐⭐ Medium–High  | Requires search and sorting logic, filtering, SQL queries, joins and specialist-topic implementation.                             |
+| 5    | **Person 6** | Database Infrastructure, Testing & Integration | ⭐⭐⭐⭐ High       | ⭐⭐⭐⭐ High        | Designs schema, manages relationships, creates tests, supports integration and helps resolve issues across the project.           |
+| 6    | **Person 3** | Budget Intelligence & Financial Health         | ⭐⭐⭐⭐⭐ Very High | ⭐⭐⭐⭐⭐ Very High  | Most algorithmic role. Requires OOP design, calculations, financial health scoring, recommendations and business logic decisions. |
